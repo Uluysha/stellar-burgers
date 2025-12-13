@@ -24,7 +24,9 @@
       "@ui-pages": ["src/components/ui/pages"],
       "@utils-types": ["src/utils/types"],
       "@api": ["src/utils/burger-api.ts"],
+      "@store": ["src/services/store"],
       "@slices": ["src/services/slices"],
+      "@thunks": ["src/services/thunks"],
       "@selectors": ["src/services/selectors"]
     }
   },
