@@ -17,7 +17,6 @@ export const Login: FC = () => {
       return;
     }
 
-    console.log('Запрос авторизации');
     dispatch(
       loginUser({
         email: email,

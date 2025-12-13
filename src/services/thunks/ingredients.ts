@@ -7,7 +7,6 @@ export const getIngredients = createAsyncThunk<TIngredient[], void>(
   'igredients/getIngredients',
   async () => {
     const response = await getIngredientsApi();
-    console.log('Ответ API в Thunk:', response);
     return response;
   }
 );

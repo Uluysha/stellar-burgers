@@ -20,10 +20,8 @@ export const BurgerIngredient: FC<TBurgerIngredientProps> = memo(
         id: nanoid()
       };
       if (ingredient.type === 'bun') {
-        console.log('Запрос выбора булочки');
         dispatch(setBun(igredientGeneraidId));
       } else {
-        console.log('Запрос добавления ингредиента');
         dispatch(addIngredients(igredientGeneraidId));
       }
     };

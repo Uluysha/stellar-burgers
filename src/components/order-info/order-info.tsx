@@ -20,7 +20,6 @@ export const OrderInfo: FC = () => {
 
   useEffect(() => {
     if (number) {
-      console.log('Запрос получить заказ #', number);
       dispatch(getOrder(Number(number)));
     }
   }, [dispatch, number]);

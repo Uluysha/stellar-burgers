@@ -13,13 +13,11 @@ export const Feed: FC = () => {
 
   useEffect(() => {
     if (orders.length === 0) {
-      console.log('Запрос ленты заказов');
       dispatch(getFeeds());
     }
   }, [dispatch]);
 
   if (request) {
-    console.log('Запрос денон');
     return <Preloader />;
   }
 

@@ -29,7 +29,6 @@ export const ingredientsSlice = createSlice({
       .addCase(getIngredients.fulfilled, (state, action) => {
         state.isLoading = false;
         state.ingredients = action.payload;
-        console.log('Данные записаны в State:', action.payload);
       })
 
       .addCase(getIngredients.rejected, (state, action) => {

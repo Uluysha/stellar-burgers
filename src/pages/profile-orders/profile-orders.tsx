@@ -10,12 +10,10 @@ export const ProfileOrders: FC = () => {
   const orders: TOrder[] = useSelector(getOrdersSelector);
 
   useEffect(() => {
-    console.log('Запрос истории заказов');
     dispatch(getOrders());
   }, [dispatch]);
 
   const handleLogout = () => {
-    console.log('Запрос деавторизации');
     dispatch(logoutUser());
   };
 

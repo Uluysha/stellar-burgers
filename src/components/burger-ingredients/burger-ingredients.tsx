@@ -40,13 +40,10 @@ export const BurgerIngredients: FC = () => {
 
   useEffect(() => {
     if (inViewBuns) {
-      console.log('Запрос скролла до булочек');
       setCurrentTab('bun');
     } else if (inViewSauces) {
-      console.log('Запрос скролла до соусов');
       setCurrentTab('sauce');
     } else if (inViewFilling) {
-      console.log('Запрос скролла до начинки');
       setCurrentTab('main');
     }
   }, [inViewBuns, inViewFilling, inViewSauces]);

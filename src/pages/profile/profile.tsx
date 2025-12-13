@@ -32,7 +32,6 @@ export const Profile: FC = () => {
 
     if (!isFormChanged) return;
 
-    console.log('Запрос на смену данных пользователя');
     dispatch(updateUser(formValue));
   };
 
@@ -53,7 +52,6 @@ export const Profile: FC = () => {
   };
 
   const handleLogout = () => {
-    console.log('Запрос деавторизации');
     dispatch(logoutUser());
   };
 

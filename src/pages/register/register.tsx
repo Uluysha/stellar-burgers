@@ -26,7 +26,6 @@ export const Register: FC = () => {
       return;
     }
 
-    console.log('Регистрация пользователя');
     dispatch(
       registerUser({
         name: userName,

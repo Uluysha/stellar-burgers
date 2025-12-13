@@ -48,12 +48,10 @@ export const BurgerConstructor: FC = () => {
       constructorItems.bun._id
     ];
 
-    console.log('Запрос на заказ бургера');
     dispatch(orderBurger(ingredientsIds));
   };
 
   const closeOrderModal = () => {
-    console.log('Закрытие модалки с заказом');
     dispatch(clearOrderModalData());
   };
 
