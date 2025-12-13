@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { TUser } from '@utils-types';
-import { RootState } from '@store';
 import {
   checkUserAuth,
   getUser,

@@ -3,24 +3,28 @@ import { LoginUI } from '@ui-pages';
 import { useDispatch, useSelector } from '@store';
 import { getLoginErrorSelector } from '@selectors';
 import { loginUser } from '@thunks';
+import { useForm } from '@hooks';
 
 export const Login: FC = () => {
   const dispatch = useDispatch();
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const error = useSelector(getLoginErrorSelector);
+
+  const { values, handleChange } = useForm({
+    email: '',
+    password: ''
+  });
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
 
-    if (!email || !password) {
+    if (!values.email || !values.password) {
       return;
     }
 
     dispatch(
       loginUser({
-        email: email,
-        password: password
+        email: values.email,
+        password: values.password
       })
     );
   };
@@ -28,10 +32,9 @@ export const Login: FC = () => {
   return (
     <LoginUI
       errorText={error || undefined}
-      email={email}
-      setEmail={setEmail}
-      password={password}
-      setPassword={setPassword}
+      email={values.email}
+      password={values.password}
+      handleChange={handleChange}
       handleSubmit={handleSubmit}
     />
   );

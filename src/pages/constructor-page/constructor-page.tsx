@@ -1,10 +1,10 @@
-import { useSelector } from '../../services/store';
+import { useSelector } from '@store';
 
 import styles from './constructor-page.module.css';
 
-import { BurgerIngredients } from '../../components';
-import { BurgerConstructor } from '../../components';
-import { Preloader } from '../../components/ui';
+import { BurgerIngredients } from '@components';
+import { BurgerConstructor } from '@components';
+import { Preloader } from '@ui';
 import { getIngredientsLoadingSelector } from '@selectors';
 import { FC } from 'react';
 

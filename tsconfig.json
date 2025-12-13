@@ -25,6 +25,7 @@
       "@utils-types": ["src/utils/types"],
       "@api": ["src/utils/burger-api.ts"],
       "@store": ["src/services/store"],
+      "@hooks": ["src/hooks"],
       "@slices": ["src/services/slices"],
       "@thunks": ["src/services/thunks"],
       "@selectors": ["src/services/selectors"]

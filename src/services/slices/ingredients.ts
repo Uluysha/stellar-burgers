@@ -1,5 +1,4 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { RootState } from '@store';
 import { TIngredient } from '@utils-types';
 import { getIngredients } from '@thunks';
 

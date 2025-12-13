@@ -4,15 +4,19 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from '@store';
 import { getIsAuthSelector, getRegisterErrorSelector } from '@selectors';
 import { registerUser } from '@thunks';
+import { useForm } from '@hooks';
 
 export const Register: FC = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const isAuth = useSelector(getIsAuthSelector);
-  const [userName, setUserName] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
   const error = useSelector(getRegisterErrorSelector);
+
+  const { values, handleChange } = useForm({
+    userName: '',
+    email: '',
+    password: ''
+  });
 
   useEffect(() => {
     if (isAuth) {
@@ -22,15 +26,15 @@ export const Register: FC = () => {
 
   const handleSubmit = (e: SyntheticEvent) => {
     e.preventDefault();
-    if (!userName || !email || !password) {
+    if (!values.userName || !values.email || !values.password) {
       return;
     }
 
     dispatch(
       registerUser({
-        name: userName,
-        email: email,
-        password: password
+        name: values.userName,
+        email: values.email,
+        password: values.password
       })
     );
   };
@@ -42,12 +46,10 @@ export const Register: FC = () => {
   return (
     <RegisterUI
       errorText={error || undefined}
-      email={email}
-      userName={userName}
-      password={password}
-      setEmail={setEmail}
-      setPassword={setPassword}
-      setUserName={setUserName}
+      email={values.email}
+      userName={values.userName}
+      password={values.password}
+      handleChange={handleChange}
       handleSubmit={handleSubmit}
     />
   );
