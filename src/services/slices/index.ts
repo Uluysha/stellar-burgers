@@ -1,4 +1,11 @@
-export * from './user';
-export * from './feed';
-export * from './constructor';
-export * from './ingredients';
+export { userSlice, authCheck } from './user';
+export { orderSlice, setCurrentOrder, clearOrderModalData } from './feed';
+export {
+  constructorSlice,
+  addIngredients,
+  setBun,
+  deleteIngredient,
+  moveIngredient,
+  resetConstructor
+} from './constructor';
+export { ingredientsSlice } from './ingredients';
