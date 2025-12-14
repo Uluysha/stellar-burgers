@@ -1,11 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { TOrder } from '@utils-types';
+import { TOrder, TOrdersData } from '@utils-types';
 import { getOrder, getOrders, orderBurger, getFeeds } from '@thunks';
 
-type TFeedState = {
-  orders: TOrder[];
-  total: number;
-  totalToday: number;
+export type TFeedState = TOrdersData & {
   currentOrder: TOrder | null;
   isLoading: boolean;
   error: string | null;
@@ -13,7 +10,7 @@ type TFeedState = {
   orderError: string | null;
 };
 
-const initialState: TFeedState = {
+export const initialState: TFeedState = {
   orders: [],
   total: 0,
   totalToday: 0,
